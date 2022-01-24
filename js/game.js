@@ -34,7 +34,6 @@ function cardClicked(elCard) {
             setTimeout(function () {
                 elCard.classList.remove('flipped');
                 elPreviousCard.classList.remove('flipped');
-                audioRight.play()
                 elPreviousCard = null;
                 audioWrong.play()
             }, 1000)
@@ -43,7 +42,7 @@ function cardClicked(elCard) {
             // Yes! a match!
             flippedCouplesCount++;
             elPreviousCard = null;
-
+            audioRight.play()
             // All cards flipped!
             if (TOTAL_COUPLES_COUNT === flippedCouplesCount) {
                 audioWin.play();
